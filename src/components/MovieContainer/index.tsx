@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import MovieTitle from './../MovieTitle'
 
 //Styles
@@ -9,10 +9,17 @@ interface MovieProps {
 }
 
 const MovieContainer: React.FC<MovieProps> = props => {
+  const [isActive, setIsActive] = useState<boolean>(false);
+
+  const handleMovieToggle = () => {
+    setIsActive(previousState => previousState = !previousState);
+  }
+
   return (
-    <div className="movie-container">
+    <div className="movie-container" onClick={handleMovieToggle}>
       <MovieTitle>{props.movieTitle}</MovieTitle>
-      <img src="./assets/ARROW_OPEN.svg" alt="Open planet details"/>
+      {(!isActive && <img src="./assets/ARROW_OPEN.svg" alt="Toggle open"/>) || <img src="./assets/ARROW_CLOSE.svg" alt="Toggle close"/>}
+      
     </div>
   )
 }
