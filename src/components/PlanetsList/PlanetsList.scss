@@ -1,0 +1,14 @@
+table {
+  width: 100%;
+  tr {
+    display: flex;
+    justify-content: space-evenly;
+    th {
+      display: flex;
+      font-size: 1rem;
+      font-weight: 400;
+      max-width: 95px;
+      align-items: center;
+    }
+  }
+}

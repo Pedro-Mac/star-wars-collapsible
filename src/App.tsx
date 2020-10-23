@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
+import React from 'react';
 //Styles
 import './App.scss';
 
 //Components
 import MovieContainer  from './components/MovieContainer'
+import PlanetsList from './components/PlanetsList'
 
 //JSON Data
 import starWars from './data.json';
