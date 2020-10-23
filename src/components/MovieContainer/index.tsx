@@ -8,7 +8,10 @@ import PlanetsList from './../PlanetsList'
 import './MovieContainer.scss'
 
 interface MovieProps {
-  movieTitle: string;
+  movie: {
+    title: string;
+    id: string;
+  };
 }
 
 const MovieContainer: React.FC<MovieProps> = props => {
@@ -21,7 +24,7 @@ const MovieContainer: React.FC<MovieProps> = props => {
   return (
     <div className="movie-container" onClick={handleMovieToggle}>
       <div className="movie-title">
-        <MovieTitle>{props.movieTitle}</MovieTitle>
+        <MovieTitle>{props.movie.title}</MovieTitle>
         {(!isActive && <img src="./assets/ARROW_OPEN.svg" alt="Toggle open"/>) || <img src="./assets/ARROW_CLOSE.svg" alt="Toggle close"/>}
       </div>
       {isActive && <PlanetsList />}

@@ -1,20 +1,27 @@
 import React from 'react'
 
-import './PlanetsList.scss'
+//Components
+import PlanetsTable from './PlanetsTable'
+import PlanetsHeader from './PlanetsHeader'
+import PlanetsRow from './PlanetsRow'
 
 const PlanetsList = () => {
+
+
   return (
-    <table>
-      <tr>
-        <th>Planet Name</th>
-        <th>Rotation Period</th>
-        <th>Orbital Period</th>
-        <th>Diameter</th>
-        <th>Climate</th>
-        <th>Surface Water</th>
-        <th>Population</th>
-      </tr>
-    </table>
+    <PlanetsTable>
+      <thead>
+        <PlanetsRow>
+          <PlanetsHeader>Planet Name</PlanetsHeader>
+          <PlanetsHeader>Rotation Period</PlanetsHeader>
+          <PlanetsHeader>Orbital Period</PlanetsHeader>
+          <PlanetsHeader>Diameter</PlanetsHeader>
+          <PlanetsHeader>Climate</PlanetsHeader>
+          <PlanetsHeader>Surface Water</PlanetsHeader>
+          <PlanetsHeader>Population</PlanetsHeader>
+        </PlanetsRow>
+      </thead>
+    </PlanetsTable>
   )
 }
 
