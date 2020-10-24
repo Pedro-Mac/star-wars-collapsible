@@ -7,7 +7,6 @@ const PlanetsHeader: React.FC = styled.th`
   font-weight: 400;
   max-width: 95px;
   align-items: center;
-
 `;
 
 export default PlanetsHeader;

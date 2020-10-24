@@ -1,6 +1,6 @@
 import React from 'react'
 
-//Components
+//Styled Components
 import PlanetsTable from './PlanetsTable'
 import PlanetsHeader from './PlanetsHeader'
 import PlanetsRow from './PlanetsRow'
