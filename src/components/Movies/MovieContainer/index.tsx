@@ -14,7 +14,7 @@ interface MovieProps {
     id: string;
   };
 
-  planetsList: () => {
+  handlePlanetsList: () => {
     id: string;
     name: string;
     rotationPeriod: number | null;
@@ -36,15 +36,13 @@ const MovieContainer: React.FC<MovieProps> = props => {
     setIsActive(previousState => previousState = !previousState);
   }
 
-  console.log(props.movie.title, props.planetsList());
-
   return (
-    <div className="movie-container" onClick={handleMovieToggle}>
-      <div className="movie-title">
+    <div className="movie-container" >
+      <div className="movie-title" onClick={handleMovieToggle}>
         <MovieTitle>{props.movie.title}</MovieTitle>
         {(!isActive && <img src="./assets/ARROW_OPEN.svg" alt="Toggle open"/>) || <img src="./assets/ARROW_CLOSE.svg" alt="Toggle close"/>}
       </div>
-      {isActive && <PlanetsList />}
+      {isActive && <PlanetsList planetsList={props.handlePlanetsList()}/>}
     </div>
   )
 }

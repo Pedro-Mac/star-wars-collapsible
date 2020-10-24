@@ -32,7 +32,7 @@ const App: React.FC = () => {
   return (
     <div className="App">
      <img src="./assets/LOGO.svg" alt="LOGO"/>
-      {films.map(value => <MovieContainer key={value.id} movie={value} planetsList={() => getPlanetsInMovie(value)} />)}
+      {films.map(value => <MovieContainer key={value.id} movie={value} handlePlanetsList={() => getPlanetsInMovie(value)} />)}
     </div>
   );
 }
