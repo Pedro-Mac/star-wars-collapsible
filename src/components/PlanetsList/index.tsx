@@ -3,24 +3,11 @@ import React from 'react'
 //Styles
 import './PlanetsListStyle.scss'
 
-
+//Components
+import PlanetsHeaderCell from './PlanetsHeaderCell'
 
 //Models
-interface PlanetsListProps {
-  planetsList: {
-    id: string;
-    name: string;
-    rotationPeriod: number | null;
-    orbitalPeriod: number | null;
-    diameter: number | null;
-    climates: string[];
-    surfaceWater: number | null;
-    population: number | null;
-    filmConnection: {
-      films: {id: string}[]
-    }
-  }[]
-}
+import {PlanetsListProps} from './../../models/PlanetsList'
 
 const PlanetsList: React.FC<PlanetsListProps> = props => {
 
@@ -28,15 +15,15 @@ const PlanetsList: React.FC<PlanetsListProps> = props => {
 
   return (
     <table>
-      <thead style={{width: '100%'}}>
+      <thead>
         <tr>
-          <th>Planet Name</th>
-          <th>Rotation Period</th>
-          <th>Orbital Period</th>
-          <th>Diameter</th>
-          <th>Climate</th>
-          <th>Surface Water</th>
-          <th>Population</th>
+          <PlanetsHeaderCell headerTitle="Planet Name"/>
+          <PlanetsHeaderCell headerTitle="Rotation Period"/>
+          <PlanetsHeaderCell headerTitle="Orbital Period"/>
+          <PlanetsHeaderCell headerTitle="Diameter"/>
+          <PlanetsHeaderCell headerTitle="Climate"/>
+          <PlanetsHeaderCell headerTitle="Surface Water"/>
+          <PlanetsHeaderCell headerTitle="Population"/>
         </tr>
       </thead>
       <tbody>
