@@ -12,6 +12,7 @@ import {PlanetsListProps} from './../../models/PlanetsList'
 const PlanetsList: React.FC<PlanetsListProps> = props => {
 
   console.log(props.planetsList);
+  const uknownStr = 'unknown'
 
   return (
     <table>
@@ -31,12 +32,12 @@ const PlanetsList: React.FC<PlanetsListProps> = props => {
           return (
             <tr>
               <td>{value.name}</td>
-              <td>{value.rotationPeriod || 'Unknown'}</td>
-              <td>{value.orbitalPeriod || 'Unknown'}</td>
-              <td>{value.diameter || 'Unknown'}</td>
+              <td>{value.rotationPeriod || uknownStr}</td>
+              <td>{value.orbitalPeriod || uknownStr}</td>
+              <td>{value.diameter || uknownStr}</td>
               <td>{value.climates.map(value => <p>{value}</p>)}</td>
-              <td>{value.surfaceWater || 'Unknown'}</td>
-              <td>{value.population || 'Unknown'}</td>
+              <td>{value.surfaceWater || uknownStr}</td>
+              <td>{value.population || uknownStr}</td>
             </tr>
           )
         })}

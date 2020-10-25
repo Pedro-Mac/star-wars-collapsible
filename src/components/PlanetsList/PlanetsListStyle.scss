@@ -3,7 +3,6 @@ table {
   margin: auto;
   border-collapse: collapse;
   color: #474747;
-  box-shadow: 0 2px 1px 0 rgba(196, 196, 196, 0.2);
 
   thead {
     width: '100%';
@@ -11,9 +10,11 @@ table {
       th {
         max-width: 65px;
         font-weight: 400;
+        font-size: 0.75rem;
         border-bottom: 1px #c4c4c4 solid;
         margin: 0;
         padding: 1.5rem 0 0.5rem 0;
+
         > div {
           display: flex;
           justify-content: flex-end;
@@ -28,10 +29,17 @@ table {
             flex-direction: column;
             margin-left: 0.25rem;
             justify-content: center;
+
             span {
               font-size: 0.5rem;
             }
           }
+        }
+      }
+
+      th:first-child {
+        > div {
+          justify-content: flex-start;
         }
       }
     }
@@ -42,10 +50,15 @@ table {
       td {
         padding: 0.5rem 0;
         text-align: end;
+        font-size: 0.75rem;
 
         p {
           margin: 0.25rem;
         }
+      }
+
+      td:first-child {
+        text-align: start;
       }
     }
   }
