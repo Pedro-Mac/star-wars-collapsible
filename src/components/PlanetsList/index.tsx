@@ -15,51 +15,19 @@ const PlanetsList: React.FC<PlanetsListProps> = props => {
   const [list, setList] = useState(props.planetsList);
   const [isSorting, setIsSorting] = useState<string>('')
 
-  const handleTableSorting = (key: string, direction: 'ascending' | 'descending' ) => {
-    
-    switch(direction) {
-      case 'descending':
-        const descendingList = list.sort((a, b)=> {
-          if((b as any)[key] > (a as any)[key]){
-            return -1;
-          } else if ((b as any)[key] < (a as any)[key]) {
-            return 1;
-          } else {
-            return 0;
-          }
-        })
-        setList(() => [...descendingList]);
-        break;
-        case 'ascending':
-          const ascendingList = list.sort((a, b)=> {
-            if((b as any)[key] < (a as any)[key]){
-              return -1;
-            } else if ((b as any)[key] > (a as any)[key]) {
-              return 1;
-            } else {
-              return 0;
-            }
-          })
-          setList(() => [...ascendingList]);
-          break;
-    }
-
-    setIsSorting(()=> key);
-  }
-
 
   return (
     <table>
       <thead>
         <tr>
-          {/*I have to pass down thhis components' state in order to re-render all the header cells and update the color*/}
-          <PlanetsHeaderCell headerTitle="Planet Name" isActive={isSorting === 'name'} ascendingHandler={()=>handleTableSorting('name', 'ascending')} descendingHandler={()=>handleTableSorting('name', 'descending')} />
-          <PlanetsHeaderCell headerTitle="Rotation Period" isActive={isSorting === 'rotationPeriod'} ascendingHandler={()=>handleTableSorting('rotationPeriod', 'ascending')} descendingHandler={()=>handleTableSorting('rotationPeriod', 'descending')}/>
-          <PlanetsHeaderCell headerTitle="Orbital Period" isActive={isSorting === 'orbitalPeriod'} ascendingHandler={()=>handleTableSorting('orbitalPeriod', 'ascending')} descendingHandler={()=>handleTableSorting('orbitalPeriod', 'descending')}/>
-          <PlanetsHeaderCell headerTitle="Diameter" isActive={isSorting === 'diameter'} ascendingHandler={()=>handleTableSorting('diameter', 'ascending')} descendingHandler={()=>handleTableSorting('diameter', 'descending')}/>
-          <PlanetsHeaderCell headerTitle="Climate" isActive={isSorting === 'climates'} ascendingHandler={()=>handleTableSorting('climates', 'ascending')} descendingHandler={()=>handleTableSorting('climates', 'descending')}/>
-          <PlanetsHeaderCell headerTitle="Surface Water" isActive={isSorting === 'surfaceWater'} ascendingHandler={()=>handleTableSorting('surfaceWater', 'ascending')} descendingHandler={()=>handleTableSorting('surfaceWater', 'descending')}/>
-          <PlanetsHeaderCell headerTitle="Population" isActive={isSorting === 'population'} ascendingHandler={()=>handleTableSorting('population', 'ascending')} descendingHandler={()=>handleTableSorting('population', 'descending')}/>
+          {/*Passing the state and the setters in order to manage them in the component reponsible for changing them*/}
+          <PlanetsHeaderCell headerTitle="Planet Name" isActive={isSorting === 'name'}  list={list} listSetter={setList} isSorting={isSorting} setIsSorting={setIsSorting} category={"name"}/>
+          <PlanetsHeaderCell headerTitle="Rotation Period" isActive={isSorting === 'rotationPeriod'}  list={list} listSetter={setList} isSorting={isSorting} setIsSorting={setIsSorting} category={"rotationPeriod"}/>
+          <PlanetsHeaderCell headerTitle="Orbital Period" isActive={isSorting === 'orbitalPeriod'}  list={list} listSetter={setList} isSorting={isSorting} setIsSorting={setIsSorting} category={"orbitalPeriod"}/>
+          <PlanetsHeaderCell headerTitle="Diameter" isActive={isSorting === 'diameter'}  list={list} listSetter={setList} isSorting={isSorting} setIsSorting={setIsSorting} category={"diameter"}/>
+          <PlanetsHeaderCell headerTitle="Climate" isActive={isSorting === 'climates'}  list={list} listSetter={setList} isSorting={isSorting} setIsSorting={setIsSorting} category={"climates"}/>
+          <PlanetsHeaderCell headerTitle="Surface Water" isActive={isSorting === 'surfaceWater'}  list={list} listSetter={setList} isSorting={isSorting} setIsSorting={setIsSorting} category={"surfaceWater"}/>
+          <PlanetsHeaderCell headerTitle="Population" isActive={isSorting === 'population'}  list={list} listSetter={setList} isSorting={isSorting} setIsSorting={setIsSorting} category={"population"}/>
         </tr>
       </thead>
       <tbody>
