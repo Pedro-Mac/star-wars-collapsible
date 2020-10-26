@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 interface HeaderProps{
   headerTitle: string;
@@ -7,6 +7,10 @@ interface HeaderProps{
 }
 
 const PlanetsHeaderCell: React.FC<HeaderProps> = props => {
+
+  //Perhaps I can pass both the state and the setState here and manipulate it here;
+
+
   return (
       <th>
         <div>

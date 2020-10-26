@@ -61,6 +61,11 @@ table {
       td:first-child {
         text-align: start;
       }
+
+      .isSorting {
+        color: #00687f;
+        font-weight: 600;
+      }
     }
   }
 }
