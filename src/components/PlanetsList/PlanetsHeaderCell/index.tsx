@@ -2,6 +2,8 @@ import React from 'react'
 
 interface HeaderProps{
   headerTitle: string;
+  ascendingHandler: ()=> void;
+  descendingHandler: ()=> void;
 }
 
 const PlanetsHeaderCell: React.FC<HeaderProps> = props => {
@@ -10,8 +12,8 @@ const PlanetsHeaderCell: React.FC<HeaderProps> = props => {
         <div>
           <p>{props.headerTitle}</p>
           <div className="arrows-container">
-            <span>▲</span>
-            <span>▼</span>
+            <span onClick={props.ascendingHandler}>▲</span>
+            <span onClick={props.descendingHandler}>▼</span>
           </div>
         </div>
       </th>
