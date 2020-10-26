@@ -52,13 +52,14 @@ const PlanetsList: React.FC<PlanetsListProps> = props => {
     <table>
       <thead>
         <tr>
-          <PlanetsHeaderCell headerTitle="Planet Name" ascendingHandler={()=>handleTableSorting('name', 'ascending')} descendingHandler={()=>handleTableSorting('name', 'descending')}/>
-          <PlanetsHeaderCell headerTitle="Rotation Period" ascendingHandler={()=>handleTableSorting('rotationPeriod', 'ascending')} descendingHandler={()=>handleTableSorting('rotationPeriod', 'descending')}/>
-          <PlanetsHeaderCell headerTitle="Orbital Period" ascendingHandler={()=>handleTableSorting('orbitalPeriod', 'ascending')} descendingHandler={()=>handleTableSorting('orbitalPeriod', 'descending')}/>
-          <PlanetsHeaderCell headerTitle="Diameter" ascendingHandler={()=>handleTableSorting('diameter', 'ascending')} descendingHandler={()=>handleTableSorting('diameter', 'descending')}/>
-          <PlanetsHeaderCell headerTitle="Climate" ascendingHandler={()=>handleTableSorting('climates', 'ascending')} descendingHandler={()=>handleTableSorting('climates', 'descending')}/>
-          <PlanetsHeaderCell headerTitle="Surface Water" ascendingHandler={()=>handleTableSorting('surfaceWater', 'ascending')} descendingHandler={()=>handleTableSorting('surfaceWater', 'descending')}/>
-          <PlanetsHeaderCell headerTitle="Population" ascendingHandler={()=>handleTableSorting('population', 'ascending')} descendingHandler={()=>handleTableSorting('population', 'descending')}/>
+          {/*I have to pass down thhis components' state in order to re-render all the header cells and update the color*/}
+          <PlanetsHeaderCell headerTitle="Planet Name" isActive={isSorting === 'name'} ascendingHandler={()=>handleTableSorting('name', 'ascending')} descendingHandler={()=>handleTableSorting('name', 'descending')} />
+          <PlanetsHeaderCell headerTitle="Rotation Period" isActive={isSorting === 'rotationPeriod'} ascendingHandler={()=>handleTableSorting('rotationPeriod', 'ascending')} descendingHandler={()=>handleTableSorting('rotationPeriod', 'descending')}/>
+          <PlanetsHeaderCell headerTitle="Orbital Period" isActive={isSorting === 'orbitalPeriod'} ascendingHandler={()=>handleTableSorting('orbitalPeriod', 'ascending')} descendingHandler={()=>handleTableSorting('orbitalPeriod', 'descending')}/>
+          <PlanetsHeaderCell headerTitle="Diameter" isActive={isSorting === 'diameter'} ascendingHandler={()=>handleTableSorting('diameter', 'ascending')} descendingHandler={()=>handleTableSorting('diameter', 'descending')}/>
+          <PlanetsHeaderCell headerTitle="Climate" isActive={isSorting === 'climates'} ascendingHandler={()=>handleTableSorting('climates', 'ascending')} descendingHandler={()=>handleTableSorting('climates', 'descending')}/>
+          <PlanetsHeaderCell headerTitle="Surface Water" isActive={isSorting === 'surfaceWater'} ascendingHandler={()=>handleTableSorting('surfaceWater', 'ascending')} descendingHandler={()=>handleTableSorting('surfaceWater', 'descending')}/>
+          <PlanetsHeaderCell headerTitle="Population" isActive={isSorting === 'population'} ascendingHandler={()=>handleTableSorting('population', 'ascending')} descendingHandler={()=>handleTableSorting('population', 'descending')}/>
         </tr>
       </thead>
       <tbody>

@@ -24,6 +24,11 @@ table {
             text-align: end;
           }
 
+          .isActive {
+            color: #00687f;
+            font-weight: 600;
+          }
+
           .arrows-container {
             display: flex;
             flex-direction: column;
