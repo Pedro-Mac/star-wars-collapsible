@@ -42,11 +42,11 @@ const PlanetsHeaderCell: React.FC<HeaderProps> = props => {
   const handleSorting = (direction: 'ascending' | 'descending') => {
 
     setSortingDirection(()=> direction)
+    console.log(sortingDirection);
   }
 
 
   const handleTableSorting = (key: string, direction: 'ascending' | 'descending' ) => {
-    
     switch(direction) {
       case 'descending':
         const descendingList = props.list.sort((a, b)=> {
@@ -84,8 +84,8 @@ const PlanetsHeaderCell: React.FC<HeaderProps> = props => {
         <div>
           <p className={(props.isActive && 'isActive') || ''}>{props.headerTitle}</p>
           <div className="arrows-container">
-            <span style={{color: (sortingDirection==='ascending' && ' #00687f') || ''}} onClick={()=> handleTableSorting(props.category,'ascending')}>▲</span>
-            <span style={{color: (sortingDirection==='descending' && ' #00687f') || ''}} onClick={()=> handleTableSorting(props.category,'descending')}>▼</span>
+            <span style={{color: (props.isActive && sortingDirection==='ascending' && '#00687f') || ''}} onClick={()=> handleTableSorting(props.category,'ascending')}>▲</span>
+            <span style={{color: (props.isActive && sortingDirection==='descending' && '#00687f') || ''}} onClick={()=> handleTableSorting(props.category,'descending')}>▼</span>
           </div>
         </div>
       </th>
