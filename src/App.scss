@@ -6,13 +6,15 @@
   max-width: 55rem;
   border-radius: 0.5rem;
   padding-bottom: 2.5rem;
+  margin-bottom: 3rem;
 
   img {
     padding: 2em 0 0 0;
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 412px),
+  (min-device-width: 768px) and (max-device-width: 1024px) {
   .App {
     width: 90%;
     margin-top: 3rem;

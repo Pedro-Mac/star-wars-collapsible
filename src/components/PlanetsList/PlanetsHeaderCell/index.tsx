@@ -4,8 +4,7 @@ interface HeaderProps{
   headerTitle: string;
   isSorting: string;
   category: string;
-  // ascendingHandler: ()=> void;
-  // descendingHandler: ()=> void;
+
   setIsSorting: Dispatch<SetStateAction<string>>;
   isActive: boolean;
   list: {
@@ -21,6 +20,7 @@ interface HeaderProps{
       films: {id: string}[]
     }
   }[];
+
   listSetter: Dispatch<SetStateAction<{id: string;
     name: string;
     rotationPeriod: number | null;
