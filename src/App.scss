@@ -11,3 +11,10 @@
     padding: 2em 0 0 0;
   }
 }
+
+@media only screen and (max-width: 400px) {
+  .App {
+    width: 90%;
+    margin-top: 3rem;
+  }
+}
