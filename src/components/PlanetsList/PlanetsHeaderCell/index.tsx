@@ -1,38 +1,16 @@
 import React, {Dispatch, SetStateAction, useState} from 'react'
 
-interface HeaderProps{
+
+//Models
+import {DispatcherProps} from './../../../models/Dispatchers';
+import { PlanetsListProps } from './../../../models/PlanetsList'
+
+interface HeaderProps extends DispatcherProps, PlanetsListProps{
   headerTitle: string;
   isSorting: string;
   category: string;
-
-  setIsSorting: Dispatch<SetStateAction<string>>;
   isActive: boolean;
-  list: {
-    id: string;
-    name: string;
-    rotationPeriod: number | null;
-    orbitalPeriod: number | null;
-    diameter: number | null;
-    climates: string[];
-    surfaceWater: number | null;
-    population: number | null;
-    filmConnection: {
-      films: {id: string}[]
-    }
-  }[];
-
-  listSetter: Dispatch<SetStateAction<{id: string;
-    name: string;
-    rotationPeriod: number | null;
-    orbitalPeriod: number | null;
-    diameter: number | null;
-    climates: string[];
-    surfaceWater: number | null;
-    population: number | null;
-    filmConnection: {
-      films: {id: string}[]
-    }
-  }[]>>
+  
 }
 
 const PlanetsHeaderCell: React.FC<HeaderProps> = props => {
@@ -49,7 +27,7 @@ const PlanetsHeaderCell: React.FC<HeaderProps> = props => {
   const handleTableSorting = (key: string, direction: 'ascending' | 'descending' ) => {
     switch(direction) {
       case 'descending':
-        const descendingList = props.list.sort((a, b)=> {
+        const descendingList = props.planetsList.sort((a, b)=> {
           if((b as any)[key] > (a as any)[key]){
             return -1;
           } else if ((b as any)[key] < (a as any)[key]) {
@@ -62,7 +40,7 @@ const PlanetsHeaderCell: React.FC<HeaderProps> = props => {
         props.listSetter(() => [...descendingList]);
         break;
         case 'ascending':
-          const ascendingList = props.list.sort((a, b)=> {
+          const ascendingList = props.planetsList.sort((a, b)=> {
             if((b as any)[key] < (a as any)[key]){
               return -1;
             } else if ((b as any)[key] > (a as any)[key]) {

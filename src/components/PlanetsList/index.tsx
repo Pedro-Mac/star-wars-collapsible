@@ -21,13 +21,13 @@ const PlanetsList: React.FC<PlanetsListProps> = props => {
       <thead>
         <tr>
           {/*Passing the state and the setters in order to manage them in the component reponsible for changing them*/}
-          <PlanetsHeaderCell headerTitle="Planet Name" isActive={isSorting === 'name'}  list={list} listSetter={setList} isSorting={isSorting} setIsSorting={setIsSorting} category={"name"}/>
-          <PlanetsHeaderCell headerTitle="Rotation Period" isActive={isSorting === 'rotationPeriod'}  list={list} listSetter={setList} isSorting={isSorting} setIsSorting={setIsSorting} category={"rotationPeriod"}/>
-          <PlanetsHeaderCell headerTitle="Orbital Period" isActive={isSorting === 'orbitalPeriod'}  list={list} listSetter={setList} isSorting={isSorting} setIsSorting={setIsSorting} category={"orbitalPeriod"}/>
-          <PlanetsHeaderCell headerTitle="Diameter" isActive={isSorting === 'diameter'}  list={list} listSetter={setList} isSorting={isSorting} setIsSorting={setIsSorting} category={"diameter"}/>
-          <PlanetsHeaderCell headerTitle="Climate" isActive={isSorting === 'climates'}  list={list} listSetter={setList} isSorting={isSorting} setIsSorting={setIsSorting} category={"climates"}/>
-          <PlanetsHeaderCell headerTitle="Surface Water" isActive={isSorting === 'surfaceWater'}  list={list} listSetter={setList} isSorting={isSorting} setIsSorting={setIsSorting} category={"surfaceWater"}/>
-          <PlanetsHeaderCell headerTitle="Population" isActive={isSorting === 'population'}  list={list} listSetter={setList} isSorting={isSorting} setIsSorting={setIsSorting} category={"population"}/>
+          <PlanetsHeaderCell headerTitle="Planet Name" isActive={isSorting === 'name'}  planetsList={list} listSetter={setList} isSorting={isSorting} setIsSorting={setIsSorting} category={"name"}/>
+          <PlanetsHeaderCell headerTitle="Rotation Period" isActive={isSorting === 'rotationPeriod'}  planetsList={list} listSetter={setList} isSorting={isSorting} setIsSorting={setIsSorting} category={"rotationPeriod"}/>
+          <PlanetsHeaderCell headerTitle="Orbital Period" isActive={isSorting === 'orbitalPeriod'}  planetsList={list} listSetter={setList} isSorting={isSorting} setIsSorting={setIsSorting} category={"orbitalPeriod"}/>
+          <PlanetsHeaderCell headerTitle="Diameter" isActive={isSorting === 'diameter'}  planetsList={list} listSetter={setList} isSorting={isSorting} setIsSorting={setIsSorting} category={"diameter"}/>
+          <PlanetsHeaderCell headerTitle="Climate" isActive={isSorting === 'climates'}  planetsList={list} listSetter={setList} isSorting={isSorting} setIsSorting={setIsSorting} category={"climates"}/>
+          <PlanetsHeaderCell headerTitle="Surface Water" isActive={isSorting === 'surfaceWater'}  planetsList={list} listSetter={setList} isSorting={isSorting} setIsSorting={setIsSorting} category={"surfaceWater"}/>
+          <PlanetsHeaderCell headerTitle="Population" isActive={isSorting === 'population'}  planetsList={list} listSetter={setList} isSorting={isSorting} setIsSorting={setIsSorting} category={"population"}/>
         </tr>
       </thead>
       <tbody>
