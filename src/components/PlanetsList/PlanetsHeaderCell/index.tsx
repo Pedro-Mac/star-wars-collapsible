@@ -1,10 +1,9 @@
-import React, {Dispatch, SetStateAction, useState} from 'react'
+import React, {useState} from 'react'
 
 
 //Models
 import {DispatcherProps} from './../../../models/Dispatchers';
 import { PlanetsListProps } from './../../../models/PlanetsList'
-
 interface HeaderProps extends DispatcherProps, PlanetsListProps{
   headerTitle: string;
   isSorting: string;
