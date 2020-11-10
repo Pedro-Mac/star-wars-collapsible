@@ -8,6 +8,10 @@ import PlanetsHeaderCell from './PlanetsHeaderCell';
 
 //Models
 import { PlanetsListProps } from './../../models/PlanetsList';
+import { SinglePlanetInfo } from './models/SinglePlanetInfo';
+
+//Utilities
+import { handleCategory } from './utilities/Category';
 
 const PlanetsList: React.FC<PlanetsListProps> = ({ planetsList }) => {
   const uknownStr = 'unknown';
@@ -29,16 +33,8 @@ const PlanetsList: React.FC<PlanetsListProps> = ({ planetsList }) => {
       <thead>
         <tr>
           {arrayOfTableHeaders.map((item, index) => {
-            let category = '';
-            if (!index) category = 'name';
-            if (item.includes(' ')) {
-              const arrayOfStrings = item.split(' ');
-              category = arrayOfStrings
-                .map((value, index) => (!index ? value.toLowerCase() : value))
-                .join('');
-            } else {
-              category = item.toLowerCase();
-            }
+            let category = handleCategory(item, index);
+
             return (
               <PlanetsHeaderCell
                 headerTitle={item}
@@ -48,44 +44,34 @@ const PlanetsList: React.FC<PlanetsListProps> = ({ planetsList }) => {
                 isSorting={isSorting}
                 setIsSorting={setIsSorting}
                 category={category}
+                key={index}
               />
             );
           })}
         </tr>
       </thead>
       <tbody>
-        {list.map(value => {
+        {list.map((value: SinglePlanetInfo) => {
           return (
             <tr key={value.id}>
-              <td className={isSorting === 'name' ? 'isSorting' : ''}>
-                {value.name}
-              </td>
-              <td className={isSorting === 'rotationPeriod' ? 'isSorting' : ''}>
-                {value.rotationPeriod || uknownStr}
-              </td>
-              <td className={isSorting === 'orbitalPeriod' ? 'isSorting' : ''}>
-                {value.orbitalPeriod || uknownStr}
-              </td>
-              <td className={isSorting === 'diameter' ? 'isSorting' : ''}>
-                {value.diameter || uknownStr}
-              </td>
-              <td className={isSorting === 'climates' ? 'isSorting' : ''}>
-                {value.climates.map((value, index) => (
-                  <p
-                    key={
-                      index /*Not best practice, but will do in this small examaple*/
-                    }
+              {arrayOfTableHeaders.map((item, index) => {
+                let category = handleCategory(item, index);
+
+                return (
+                  <td
+                    className={isSorting === category ? 'isSorting' : ''}
+                    key={index}
                   >
-                    {value}
-                  </p>
-                ))}
-              </td>
-              <td className={isSorting === 'surfaceWater' ? 'isSorting' : ''}>
-                {value.surfaceWater || uknownStr}
-              </td>
-              <td className={isSorting === 'population' ? 'isSorting' : ''}>
-                {value.population || uknownStr}
-              </td>
+                    {!value[category]
+                      ? uknownStr
+                      : category !== 'climates'
+                      ? value[category]
+                      : value[category].map((val, index) => (
+                          <p key={index}>{val}</p>
+                        ))}
+                  </td>
+                );
+              })}
             </tr>
           );
         })}
