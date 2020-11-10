@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 //Models
-import { DispatcherProps } from './../../../models/Dispatchers';
-import { PlanetsListProps } from './../../../models/PlanetsList';
+import { DispatcherProps } from './models/Dispatchers';
+import { PlanetsListProps } from '../models/PlanetsList';
 import { SinglePlanetInfo } from './../models/SinglePlanetInfo';
 interface HeaderProps extends DispatcherProps, PlanetsListProps {
   headerTitle: string;

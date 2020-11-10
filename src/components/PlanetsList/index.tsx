@@ -7,7 +7,7 @@ import './PlanetsListStyle.scss';
 import PlanetsHeaderCell from './PlanetsHeaderCell';
 
 //Models
-import { PlanetsListProps } from './../../models/PlanetsList';
+import { PlanetsListProps } from './models/PlanetsList';
 import { SinglePlanetInfo } from './models/SinglePlanetInfo';
 
 //Utilities
