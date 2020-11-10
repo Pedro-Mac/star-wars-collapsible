@@ -11,6 +11,15 @@
   img {
     padding: 2em 0 0 0;
   }
+
+  a {
+    text-decoration: none;
+    color: #00687f;
+    font-weight: 500;
+  }
+  a:hover {
+    opacity: 0.5;
+  }
 }
 
 @media only screen and (max-width: 412px),
