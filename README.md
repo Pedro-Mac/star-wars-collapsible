@@ -24,4 +24,4 @@ My goal with this project was to practice **_Typescript_**, **_React Hooks_** an
 - Scalability! I hard-coded a few things that could be escalated and perhaps it would be wiser to make them more scalable - arrays are useful for that.
 
 - CSS - I definitely need more practice. I felt comfortable with most of things, but when it comes to pseudo-elements I am a rookie.
-  Responsiveness is also something I have to practice - I have difficulties with understanding what are the optimal breakpoints in order to make things look nice on every device available on Google Chrome.
+  Responsiveness is also something I have to practice - I have difficulties with understanding what are the optimal breakpoints in order to make things look nice on every device available on Google Chrome Dev Tools.
